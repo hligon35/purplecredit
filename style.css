@@ -1,3 +1,9 @@
+/* Center the How it works section title */
+.how-it-works h2 {
+  text-align: center;
+}
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
@@ -71,18 +77,70 @@ header p {
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
-.features div {
-  max-width: 300px;
+.features .card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 24px rgba(162,89,198,0.12), 0 2px 8px rgba(0,0,0,0.06);
+  padding: 2rem 1rem 1.5rem 1rem;
+  margin: 0 1rem;
+  max-width: 320px;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: 2px solid #e6e6fa;
 }
-.how-it-works {
-  background: #e6e6fa;
-  padding: 2rem 1rem;
+.features .card:hover {
+  box-shadow: 0 12px 36px rgba(162,89,198,0.18), 0 6px 24px rgba(0,0,0,0.12);
+  transform: translateY(-4px) scale(1.03);
+  border-color: #a259c6;
+}
+.features .card img {
+  margin-bottom: 1rem;
   border-radius: 12px;
-  margin: 2rem 0;
-  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
-.how-it-works h2 {
+.features .card h2 {
   color: #a259c6;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+.features .card p {
+  font-size: 1rem;
+  color: #444;
+}
+.how-it-works-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.how-it-works-card {
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(162,89,198,0.10), 0 1.5px 6px rgba(0,0,0,0.04);
+  padding: 1.5rem 1rem;
+  max-width: 260px;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #e6e6fa;
+  text-align: center;
+  border-radius: 20px;
+}
+.how-it-works-card img {
+  width: 140px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.how-it-works-card strong {
+  color: #a259c6;
+  font-size: 1.1rem;
 }
 footer {
   background: #20b2aa;
@@ -96,6 +154,15 @@ footer {
 footer a {
   color: #fff;
   text-decoration: underline;
+  margin: 0 0.5rem;
+}
+@media (max-width: 900px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+}
   margin: 0 0.5rem;
 }
 @media (max-width: 900px) {
