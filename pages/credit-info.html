@@ -1,44 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-x: hidden;">
 <head>
   <meta charset="UTF-8">
   <title>Credit Info - Purple Credit Repair</title>
   <link rel="stylesheet" href="../style.css">
 </head>
-<body>
-  <nav>
+<body style="overflow-x: hidden;">
+  <nav style="position: sticky; top: 0; left: 0; width: 100%; z-index: 100; background: #fff; box-shadow: 0 2px 12px rgba(162,89,198,0.07), 0 1px 4px rgba(0,0,0,0.03);">
     <div class="logo">Purple Credit Repair</div>
-    <ul>
+    <ul style="margin-right: 48px;">
       <li><a href="../index.html">Home</a></li>
       <li><a href="services.html">Our Services</a></li>
       <li><a href="credit-info.html">Credit Info</a></li>
       <li><a href="faq.html">FAQ</a></li>
       <li><a href="signup.html">Sign Up</a></li>
-      <li><a href="client-login.html">Client Login</a></li>
+      <li style="position:relative;">
+        <a href="#" style="position:relative;">Client Login ▼</a>
+        <div style="display:none; position:absolute; right:0; top:100%; background:#fff; border-radius:12px; box-shadow:0 4px 16px rgba(162,89,198,0.10), 0 1.5px 6px rgba(0,0,0,0.04); border:2px solid #e6e6fa; min-width:260px; z-index:1000; padding:1.5rem;">
+          <form action="#" method="post" style="display:flex; flex-direction:column; gap:1rem;">
+            <label for="login-email" style="font-weight:600;">Email:</label>
+            <input type="email" id="login-email" name="login-email" required style="padding:0.5rem; border-radius:8px; border:1px solid #e6e6fa;">
+            <label for="login-password" style="font-weight:600;">Password:</label>
+            <input type="password" id="login-password" name="login-password" required style="padding:0.5rem; border-radius:8px; border:1px solid #e6e6fa;">
+            <button type="submit" style="background:#a259c6; color:#fff; border:none; border-radius:8px; padding:0.75rem 1.5rem; font-size:1.1rem; font-weight:600; cursor:pointer; margin-top:1rem;">Login</button>
+          </form>
+        </div>
+        <script>
+          const loginLink = document.querySelector('nav ul li a[href="#"]');
+          const dropdown = loginLink.nextElementSibling;
+          loginLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+          });
+          document.addEventListener('click', function(e) {
+            if (!loginLink.contains(e.target) && !dropdown.contains(e.target)) {
+              dropdown.style.display = 'none';
+            }
+          });
+        </script>
+      </li>
     </ul>
   </nav>
   <main>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 2rem; max-width: 1200px; min-height: 80vh; padding: 2rem 0; justify-items: center; align-items: center; margin: 0 auto 0 300px; place-items: center;">
-        <img src="../images/creditinfo.jpg" alt="Credit Info" style="grid-column: 1 / span 2; grid-row: 1 / span 2; width: 1050px; height: 95%; object-fit:cover; border-radius:20px; box-shadow:0 4px 16px rgba(162,89,198,0.10), 0 1.5px 6px rgba(0,0,0,0.04);">
-      <div class="card" style="grid-column: 3; grid-row: 1; min-width:320px; max-width:320px; padding:2rem; background:#fff; border-radius:20px; box-shadow:0 6px 24px rgba(162,89,198,0.12), 0 2px 8px rgba(0,0,0,0.06); border:2px solid #e6e6fa;">
-        <h2 style="color:#a259c6;">What is a Credit Score?</h2>
-        <p>Your credit score is a number that represents your creditworthiness. Lenders use it to determine your ability to repay loans. A higher score can help you qualify for better rates and more financial opportunities.</p>
-      </div>
-      <div class="card" style="grid-column: 3; grid-row: 2; min-width:320px; max-width:320px; padding:2rem; background:#fff; border-radius:20px; box-shadow:0 6px 24px rgba(162,89,198,0.12), 0 2px 8px rgba(0,0,0,0.06); border:2px solid #e6e6fa;">
-        <h2 style="color:#a259c6;">Why Credit Matters</h2>
-        <p>Good credit can help you qualify for loans, get better interest rates, and even impact job opportunities. Maintaining a strong credit profile is essential for financial success and stability.</p>
-      </div>
-      <div class="card" style="grid-column: 1; grid-row: 3; min-width:320px; max-width:320px; padding:2rem; background:#fff; border-radius:20px; box-shadow:0 6px 24px rgba(162,89,198,0.12), 0 2px 8px rgba(0,0,0,0.06); border:2px solid #e6e6fa;">
-        <h2 style="color:#a259c6;">Pay Bills on Time</h2>
-        <p>Consistently paying your bills on time is one of the most important factors in maintaining a healthy credit score. Late payments can significantly lower your score and remain on your report for years. Set reminders or automate payments to stay on track.</p>
-      </div>
-      <div class="card" style="grid-column: 2; grid-row: 3; min-width:320px; max-width:320px; padding:2rem; background:#fff; border-radius:20px; box-shadow:0 6px 24px rgba(162,89,198,0.12), 0 2px 8px rgba(0,0,0,0.06); border:2px solid #e6e6fa;">
-        <h2 style="color:#a259c6;">Reduce Debt</h2>
-        <p>Lowering your overall debt can improve your credit utilization ratio and boost your score. Focus on paying down high-interest balances first and avoid accumulating new debt. Responsible debt management is key to long-term credit health.</p>
-      </div>
-      <div class="card" style="grid-column: 3; grid-row: 3; min-width:320px; max-width:320px; padding:2rem; background:#fff; border-radius:20px; box-shadow:0 6px 24px rgba(162,89,198,0.12), 0 2px 8px rgba(0,0,0,0.06); border:2px solid #e6e6fa;">
-        <h2 style="color:#a259c6;">Dispute Inaccuracies</h2>
-        <p>Regularly review your credit report for errors or inaccuracies. Disputing incorrect information can help restore your score and ensure your report accurately reflects your financial history. We can assist you in challenging and correcting these items.</p>
+    <div style="background: #f8f6fc; border-radius: 32px; box-shadow: 0 8px 32px rgba(162,89,198,0.10), 0 2px 12px rgba(0,0,0,0.04); padding: 3.5rem; max-width: 1600px; margin: 2rem auto;">
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 3rem; min-height: 100vh; justify-items: center; align-items: center;">
+        <img src="../images/creditinfo.jpg" alt="Credit Info" style="grid-column: 1 / span 2; grid-row: 1 / span 2; width: 100%; max-width: 1200px; height: 100%; object-fit:cover; border-radius:20px; box-shadow:0 4px 16px rgba(162,89,198,0.10), 0 1.5px 6px rgba(0,0,0,0.04);">
+        <div class="card" style="grid-column: 3; grid-row: 1; min-width:320px; max-width:320px; padding:2rem; background:#fff; border-radius:20px; box-shadow:0 6px 24px rgba(162,89,198,0.12), 0 2px 8px rgba(0,0,0,0.06); border:2px solid #e6e6fa; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+          <h2 style="color:#a259c6;">What is a Credit Score?</h2>
+          <p>Your credit score is a number that represents your creditworthiness. Lenders use it to determine your ability to repay loans. A higher score can help you qualify for better rates and more financial opportunities.</p>
+        </div>
+        <div class="card" style="grid-column: 3; grid-row: 2; min-width:320px; max-width:320px; padding:2rem; background:#fff; border-radius:20px; box-shadow:0 6px 24px rgba(162,89,198,0.12), 0 2px 8px rgba(0,0,0,0.06); border:2px solid #e6e6fa; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+          <h2 style="color:#a259c6;">Why Credit Matters</h2>
+          <p>Good credit can help you qualify for loans, get better interest rates, and even impact job opportunities. Maintaining a strong credit profile is essential for financial success and stability.</p>
+        </div>
+        <div class="card" style="grid-column: 1; grid-row: 3; min-width:320px; max-width:320px; padding:2rem; background:#fff; border-radius:20px; box-shadow:0 6px 24px rgba(162,89,198,0.12), 0 2px 8px rgba(0,0,0,0.06); border:2px solid #e6e6fa; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+          <h2 style="color:#a259c6;">Pay Bills on Time</h2>
+          <p>Consistently paying your bills on time is one of the most important factors in maintaining a healthy credit score. Late payments can significantly lower your score and remain on your report for years. Set reminders or automate payments to stay on track.</p>
+        </div>
+        <div class="card" style="grid-column: 2; grid-row: 3; min-width:320px; max-width:320px; padding:2rem; background:#fff; border-radius:20px; box-shadow:0 6px 24px rgba(162,89,198,0.12), 0 2px 8px rgba(0,0,0,0.06); border:2px solid #e6e6fa; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+          <h2 style="color:#a259c6;">Reduce Debt</h2>
+          <p>Lowering your overall debt can improve your credit utilization ratio and boost your score. Focus on paying down high-interest balances first and avoid accumulating new debt. Responsible debt management is key to long-term credit health.</p>
+        </div>
+        <div class="card" style="grid-column: 3; grid-row: 3; min-width:320px; max-width:320px; padding:2rem; background:#fff; border-radius:20px; box-shadow:0 6px 24px rgba(162,89,198,0.12), 0 2px 8px rgba(0,0,0,0.06); border:2px solid #e6e6fa; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+          <h2 style="color:#a259c6;">Dispute Inaccuracies</h2>
+          <p>Regularly review your credit report for errors or inaccuracies. Disputing incorrect information can help restore your score and ensure your report accurately reflects your financial history. We can assist you in challenging and correcting these items.</p>
+        </div>
       </div>
     </div>
   <footer>
